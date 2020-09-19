@@ -7,10 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
-
-import javax.persistence.EntityManagerFactory;
 
 /**
  * @author GTsung
@@ -39,10 +36,10 @@ public class TransactionManagerBean {
         return new DataSourceTransactionManager(druidDataSource);
     }
 
-    @Bean(value = "jpaTx")
-    public PlatformTransactionManager jpaManager(EntityManagerFactory managerFactory) {
-        return new JpaTransactionManager(managerFactory);
-    }
+//    @Bean(value = "jpaTx")
+//    public PlatformTransactionManager jpaManager(EntityManagerFactory managerFactory) {
+//        return new JpaTransactionManager(managerFactory);
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(TransactionManagerBean.class, args);
