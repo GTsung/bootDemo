@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  */
 // 一种读取配置文件的方式@Value
 @Configuration
-public class DataSource {
+public class DataSource1 {
 
     @Value(value = "${spring.datasource.driver-class-name}")
     private String driverClass;
